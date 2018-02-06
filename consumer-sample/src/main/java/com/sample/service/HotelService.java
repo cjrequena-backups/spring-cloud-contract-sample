@@ -1,5 +1,6 @@
 package com.sample.service;
 
+import com.sample.dto.ClientDTO;
 import com.sample.dto.HotelDTO;
 import feign.Headers;
 import lombok.extern.log4j.Log4j2;
@@ -29,15 +30,24 @@ public class HotelService implements IHotelService {
   @Autowired
   ProducerFeignClient producerFeignClient;
 
+  @Autowired
+  ClientServiceClientFeign clientFeignClient;
+
   @Override public ResponseEntity<Void> createHotel(HotelDTO dto) {
+    ClientDTO clientDTO = new ClientDTO();
+    clientDTO.setClientId(90L);
+    clientDTO.setInclusion(true);
+    clientDTO.setRateId(3L);
+    clientDTO.setReceptiveId(3L);
+    //clientFeignClient.create(clientDTO);
     return producerFeignClient.createHotel(dto);
   }
 
   @FeignClient("producer-sample")
-  interface ProducerFeignClient {
-    @RequestMapping(method = RequestMethod.POST, value = "/producer/hotels")
+  public interface ProducerFeignClient {
+    @RequestMapping(method = RequestMethod.POST, value = "/producer-test/hotels")
     @Headers("Content-Type: application/json")
-    ResponseEntity<Void> createHotel(@RequestBody HotelDTO dto);
+    public ResponseEntity<Void> createHotel(@RequestBody HotelDTO dto);
   }
 }
 

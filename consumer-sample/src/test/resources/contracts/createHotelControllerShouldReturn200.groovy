@@ -2,9 +2,10 @@
  * Created by jgutierrez on 20/11/2017.
  */
 org.springframework.cloud.contract.spec.Contract.make {
+
     request {
         method 'POST'
-        url '/producer/hotels'
+        url '/consumer-test/hotels'
         body("""{
           "id": 6,
           "description": "string",
@@ -13,11 +14,13 @@ org.springframework.cloud.contract.spec.Contract.make {
           "local_currency_code": "string",
           "name": "string",
           "phone": "string",
-          "rate": "string"
+          "rate": "string",
+          "test_long": 1,
+          "test_boolean": true
         }""")
         headers {
             header('''Accept''', '''*/*''')
-            header('''Content-Type''', '''application/json''')
+            contentType(applicationJson())
         }
     }
     response {

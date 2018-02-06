@@ -13,16 +13,16 @@ spring:
     consul:
       host: ${SPRING_CLOUD_CONSUL_HOST:localhost}
       port: ${SPRING_CLOUD_CONSUL_PORT:8500}
-      enabled: ${SPRING_CLOUD_CONSUL_ENABLED:true}
+      enabled: ${SPRING_CLOUD_CONSUL_ENABLED:false}
       discovery:
         # Service name
         serviceName: ${spring.application.name}
         # Unique service instance id
         instanceId: ${spring.application.name}
         # Is service discovery enabled?
-        enabled: ${SPRING_CLOUD_CONSUL_DISCOVERY_ENABLED:true}
+        enabled: ${SPRING_CLOUD_CONSUL_DISCOVERY_ENABLED:false}
         # Register as a service in consul.
-        register: ${SPRING_CLOUD_CONSUL_DISCOVERY_REGISTER:true}
+        register: ${SPRING_CLOUD_CONSUL_DISCOVERY_REGISTER:false}
         # Register health check in consul. Useful during development of a service.
         registerHealthCheck: ${SPRING_CLOUD_CONSUL_DISCOVERY_REGISTERHEALTHCHECK:true}
         # Alternate server path to invoke for health checking

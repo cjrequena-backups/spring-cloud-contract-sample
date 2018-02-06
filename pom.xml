@@ -2,6 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <groupId>com.sample</groupId>
     <artifactId>spring-cloud-contract-sample</artifactId>
     <version>1.0.0-SNAPSHOT</version>
@@ -27,7 +28,8 @@
         <!-- Spring -->
         <org.springframework.boot.version>1.5.9.RELEASE</org.springframework.boot.version>
         <spring-cloud-dependencies.version>Edgware.RELEASE</spring-cloud-dependencies.version>
-        <spring-cloud-contract-dependencies.version>1.2.1.RELEASE</spring-cloud-contract-dependencies.version>
+        <!--<spring-cloud-contract-dependencies.version>1.2.1.RELEASE</spring-cloud-contract-dependencies.version>-->
+
         <springfox.version>2.6.0</springfox.version>
         <!-- Boilerplate -->
         <lombok.version>1.16.10</lombok.version>
@@ -61,7 +63,8 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-contract-dependencies</artifactId>
-                <version>${spring-cloud-contract-dependencies.version}</version>
+                <!--<version>${spring-cloud-contract-dependencies.version}</version>-->
+                <version>1.2.0.RELEASE</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -87,10 +90,22 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.ow2.asm</groupId>
+                    <artifactId>asm</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.fasterxml.jackson.core</groupId>
+                    <artifactId>jackson-databind</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -125,6 +140,16 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-hystrix</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.ow2.asm</groupId>
+                    <artifactId>asm</artifactId>
+                </exclusion>
+                    <exclusion>
+                        <groupId>org.apache.commons</groupId>
+                        <artifactId>commons-lang3</artifactId>
+                    </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -152,6 +177,20 @@
             <artifactId>springfox-staticdocs</artifactId>
             <version>${springfox.version}</version>
             <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.commons</groupId>
+                    <artifactId>commons-lang3</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.swagger</groupId>
+                    <artifactId>swagger-models</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.google.code.findbugs</groupId>
+                    <artifactId>jsr305</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <!-- -->
         <dependency>

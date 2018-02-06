@@ -31,7 +31,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 @Slf4j
 @Component
 @RestController
-@RequestMapping(value = "/consumer")
+@RequestMapping(value = "/consumer-test")
 @Api(value = "Example System", description = "Example system API")
 public class HotelController {
 

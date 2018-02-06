@@ -28,7 +28,7 @@ import org.springframework.web.util.UriComponentsBuilder;
  */
 @Slf4j
 @RestController
-@RequestMapping(value = "/producer")
+//@RequestMapping(value = "/producer-test")
 @Api(value = "Example System", description = "Example system API")
 public class HotelController {
 
@@ -52,7 +52,7 @@ public class HotelController {
     @ApiResponse(code = 409, message = "Conflict"),
     @ApiResponse(code = 500, message = "Failure")
   })
-  @RequestMapping(value = "/hotels", method = RequestMethod.POST)
+  @RequestMapping(value = "/producer-test/hotels", method = RequestMethod.POST)
   public ResponseEntity<Void> createHotel(@RequestBody HotelDTO dto, UriComponentsBuilder ucBuilder) throws Exception {
     try {
       HttpHeaders headers = new HttpHeaders();

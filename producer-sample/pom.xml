@@ -26,7 +26,7 @@
         <!-- Spring -->
         <org.springframework.boot.version>1.5.9.RELEASE</org.springframework.boot.version>
         <spring-cloud-dependencies.version>Edgware.RELEASE</spring-cloud-dependencies.version>
-        <spring-cloud-contract-dependencies.version>1.2.1.RELEASE</spring-cloud-contract-dependencies.version>
+
         <springfox.version>2.6.0</springfox.version>
         <!-- Boilerplate -->
         <lombok.version>1.16.10</lombok.version>
@@ -56,7 +56,8 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-contract-dependencies</artifactId>
-                <version>${spring-cloud-contract-dependencies.version}</version>
+                <!--<version>${spring-cloud-contract-dependencies.version}</version>-->
+                <version>1.2.0.RELEASE</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -249,7 +250,8 @@
             <plugin>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-contract-maven-plugin</artifactId>
-                <version>${spring-cloud-contract-dependencies.version}</version>
+                <!--<version>${spring-cloud-contract-dependencies.version}</version>-->
+                <version>1.2.0.RELEASE</version>
                 <executions>
                     <execution>
                         <goals>
