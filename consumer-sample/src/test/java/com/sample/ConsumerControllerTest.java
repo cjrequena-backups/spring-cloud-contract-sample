@@ -22,7 +22,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @author Marcin Grzejszczak
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = {MainApplication.class},webEnvironment = WebEnvironment.MOCK)
+@SpringBootTest(classes = {ConsumerMainApplication.class},webEnvironment = WebEnvironment.MOCK)
 @AutoConfigureMockMvc
 @AutoConfigureJsonTesters
 //remove::start[]

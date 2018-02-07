@@ -1,10 +1,9 @@
 package com.sample.contracts;
 
-import com.sample.MainApplication;
+import com.sample.ConsumerMainApplication;
 import groovy.util.logging.Log4j2;
 import io.restassured.module.mockmvc.RestAssuredMockMvc;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.json.AutoConfigureJsonTesters;
@@ -22,7 +21,7 @@ import org.springframework.web.context.WebApplicationContext;
 
 @Log4j2
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = {MainApplication.class}, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(classes = {ConsumerMainApplication.class}, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ActiveProfiles({
   "local"
 })

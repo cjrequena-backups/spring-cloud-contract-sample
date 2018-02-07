@@ -4,7 +4,6 @@ import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.netflix.feign.EnableFeignClients;
 
 /**
  * <p>
@@ -19,10 +18,9 @@ import org.springframework.cloud.netflix.feign.EnableFeignClients;
  */
 @SpringBootApplication
 @EnableDiscoveryClient
-@EnableFeignClients
-public class MainApplication { //NOSONAR
+public class ProducerMainApplication { //NOSONAR
 
-  private static Class<MainApplication> mainApplicationClass = MainApplication.class;
+  private static Class<ProducerMainApplication> mainApplicationClass = ProducerMainApplication.class;
 
   /**
    * @param args
